@@ -1,86 +1,96 @@
 const maxX = 5;
 const maxY = 5;
 
-let mower = {
-    x: 1,
-    y: 2,
-    orientation: 'N'
-};
+let mowers = [
+    {
+        x: 1,
+        y: 2,
+        orientation: 'N'
+    },
+    {
+        x: 3,
+        y: 3,
+        orientation: 'E'
+    }
+];
 
 
-
-const instructions = 'LMLMLMLMM ';
+const instructions = [
+    'LMLMLMLMM',
+    'MMRMMRMRRM'
+];
 
 
 function moveMower(mower, instructions) {
+    let currentX = mower.x;
+    let currentY = mower.y;
+    let currentOrientation = mower.orientation;
+
     for (let i = 0; i < instructions.length; i++) {
         let instruction = instructions[i];
 
         if (instruction === 'L') {
             // left
-            switch (mower.direction) {
+            switch (currentOrientation) {
                 case 'N':
-                    mower.direction = 'W';
+                    currentOrientation = 'W';
                     break;
                 case 'W':
-                    mower.direction = 'S';
+                    currentOrientation = 'S';
                     break;
                 case 'S':
-                    mower.direction = 'E';
+                    currentOrientation = 'E';
                     break;
                 case 'E':
-                    mower.direction = 'N';
+                    currentOrientation = 'N';
                     break;
             }
         } else if (instruction === 'R') {
             // right
-            switch (mower.direction) {
+            switch (currentOrientation) {
                 case 'N':
-                    mower.direction = 'E';
+                    currentOrientation = 'E';
                     break;
                 case 'E':
-                    mower.direction = 'S';
+                    currentOrientation = 'S';
                     break;
                 case 'S':
-                    mower.direction = 'W';
+                    currentOrientation = 'W';
                     break;
                 case 'W':
-                    mower.direction = 'N';
+                    currentOrientation = 'N';
                     break;
             }
         } else if (instruction === 'M') {
             // go straight
-            switch (mower.direction) {
+            switch (currentOrientation) {
                 case 'N':
-                    mower.y++;
+                    currentY++;
                     break;
                 case 'E':
-                    mower.x++;
+                    currentX++;
                     break;
                 case 'S':
-                    mower.y--;
+                    currentY--;
                     break;
                 case 'W':
-                    mower.x--;
+                    currentX--;
                     break;
             }
 
             // inside
-            if (mower.x < 0 || mower.x > maxX || mower.y < 0 || mower.y > maxY) {
+            if (currentX < 0 || currentX > maxX || currentY < 0 || currentY > maxY) {
                 throw new Error('Mower out of bounds');
             }
         }
     }
-    return `${mower.x} ${mower.y} ${mower.orientation}`;
-    
+
+    return `${currentX} ${currentY} ${currentOrientation}`;
 }
 
 
-moveMower(mower, instructions);
-console.log(moveMower(mower, instructions))
+for (let i = 0; i < mowers.length; i++) {
+    const result = moveMower(mowers[i], instructions[i]);
+    console.log(`Mower ${i+1}: ${result}`);
+}
 
-
-
-// server.listen(3000, function () {
-//     console.log('La Aplicación está funcionando en el puerto 3000');
-// });
