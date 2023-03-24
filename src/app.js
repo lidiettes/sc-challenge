@@ -5,12 +5,11 @@ let mower = {
     x: 1,
     y: 2,
     orientation: 'N'
-
 };
 
 const instructions = 'LMLMLMLMM';
 
-function moveMower(mover, instructions) {
+function moveMower(mower, instructions) {
     for (let i = 0; i < instructions.length; i++) {
         let instruction = instructions[i];
 
@@ -75,3 +74,7 @@ function moveMower(mover, instructions) {
 
 
 moveMower(mower, instructions);
+
+server.listen(3000, function () {
+    console.log('La Aplicación está funcionando en el puerto 3000');
+});
