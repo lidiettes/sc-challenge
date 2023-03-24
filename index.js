@@ -7,7 +7,10 @@ let mower = {
     orientation: 'N'
 };
 
-const instructions = 'LMLMLMLMM';
+
+
+const instructions = 'LMLMLMLMM ';
+
 
 function moveMower(mower, instructions) {
     for (let i = 0; i < instructions.length; i++) {
@@ -68,13 +71,16 @@ function moveMower(mower, instructions) {
             }
         }
     }
-
-    console.log(mower.x, mower.y, mower.direction);
+    return `${mower.x} ${mower.y} ${mower.orientation}`;
+    
 }
 
 
 moveMower(mower, instructions);
+console.log(moveMower(mower, instructions))
 
-server.listen(3000, function () {
-    console.log('La Aplicación está funcionando en el puerto 3000');
-});
+
+
+// server.listen(3000, function () {
+//     console.log('La Aplicación está funcionando en el puerto 3000');
+// });
