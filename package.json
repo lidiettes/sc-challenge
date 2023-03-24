@@ -1,0 +1,22 @@
+{
+  "name": "sc-codechallenge",
+  "version": "1.0.0",
+  "description": "full-stack-challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lidiettes/sc-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lidiettes/sc-challenge/issues"
+  },
+  "homepage": "https://github.com/lidiettes/sc-challenge#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
