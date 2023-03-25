@@ -1,4 +1,4 @@
-const { maxX, maxY } = require('../data/data.js');
+const { maxX, maxY } = require('../data/data');
 
 function moveMower(mower, instructions) {
     let currentX = mower.x;

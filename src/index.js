@@ -1,5 +1,5 @@
-const { moveMower } = require('./utils/mower.js')
-const { mowers, instructions } = require('./data/data.js');
+const { moveMower } = require('./utils/mower')
+const { mowers, instructions } = require('./data/data');
 
 let finalPositions = [];
 
