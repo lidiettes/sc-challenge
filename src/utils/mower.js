@@ -59,7 +59,7 @@ function moveMower(mower, instructions) {
 
             // inside
             if (currentX < 0 || currentX > maxX || currentY < 0 || currentY > maxY) {
-                throw new Error('Mower out of bounds');
+                throw new Error('Mower out of area');
             }
         }
     }

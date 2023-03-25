@@ -16,16 +16,9 @@ test('moves correctly to the north', () => {
 
 test('moves correctly to the east', () => {
     const mower = { x: 0, y: 0, orientation: 'E' };
-    const instructions = ['M', 'R', 'M', 'R', 'M'];
+    const instructions = ['M'];
 
-    expect(moveMower(mower, instructions)).toBe('1 1 E');
-});
-
-test('doesnt move out of the area', () => {
-    const mower = { x: 0, y: 0, orientation: 'S' };
-    const instructions = ['M', 'M', 'M'];
-
-    expect(() => moveMower(mower, instructions)).toThrow('Mower out of bounds');
+    expect(moveMower(mower, instructions)).toBe('1 0 E');
 });
 
 test('moves correctly to the south ', () => {
@@ -40,4 +33,11 @@ test('moves correctly to the west', () => {
     const instructions = ['M'];
 
     expect(moveMower(mower, instructions)).toBe('0 1 W');
+});
+
+test('doesnt move out of the area', () => {
+    const mower = { x: 0, y: 0, orientation: 'S' };
+    const instructions = ['M', 'M', 'M'];
+
+    expect(() => moveMower(mower, instructions)).toThrow(/Mower out of area/);
 });
