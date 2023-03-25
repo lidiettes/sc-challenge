@@ -1,25 +1,4 @@
-const maxX = 5;
-const maxY = 5;
-
-let mowers = [
-    {
-        x: 1,
-        y: 2,
-        orientation: 'N'
-    },
-    {
-        x: 3,
-        y: 3,
-        orientation: 'E'
-    }
-];
-
-
-const instructions = [
-    'LMLMLMLMM',
-    'MMRMMRMRRM'
-];
-
+const { maxX, maxY } = require('../data/data.js');
 
 function moveMower(mower, instructions) {
     let currentX = mower.x;
@@ -89,8 +68,4 @@ function moveMower(mower, instructions) {
 }
 
 
-for (let i = 0; i < mowers.length; i++) {
-    const result = moveMower(mowers[i], instructions[i]);
-    console.log(`Mower ${i+1}: ${result}`);
-}
-
+module.exports = { moveMower }
