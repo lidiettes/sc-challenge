@@ -1,7 +1,7 @@
 const { moveMower } = require('./mower');
 
 describe("Given a demo test", () => {
-    describe("When test are executed", () => {
+    describe("When tests are executed", () => {
         describe("And I want test movements", () => {
             test('the moveMower function is executed without errors', () => {
                 const mower = { x: 0, y: 0, orientation: 'N' };
@@ -39,7 +39,7 @@ describe("Given a demo test", () => {
             });
         });
 
-        describe("And I want test the are", () => {
+        describe("And I want test the area", () => {
             test('doesnt move out of the area', () => {
                 const mower = { x: 0, y: 0, orientation: 'S' };
                 const instructions = ['M', 'M', 'M'];
