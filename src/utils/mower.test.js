@@ -40,7 +40,7 @@ describe("Given a demo test", () => {
             test('Then shouldnt move out of the area', () => {
                 const mower = { x: 0, y: 0, orientation: 'S' };
                 const instructions = ['M', 'M', 'M'];
-                expect(() => moveMower(mower, instructions)).toThrow(/Mower out of area/);
+                expect(() => moveMower(mower, instructions)).toThrow("Mower out of area");
             });
         })
 

@@ -4,6 +4,7 @@ function moveMower(mower, instructions) {
     let currentX = mower.x;
     let currentY = mower.y;
     let currentOrientation = mower.orientation;
+    console.log(instructions)
 
     for (let i = 0; i < instructions.length; i++) {
         let instruction = instructions[i];
