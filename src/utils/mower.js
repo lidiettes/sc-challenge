@@ -1,72 +1,53 @@
-const { maxX, maxY } = require('../data/data');
 
-function moveMower(mower, instructions) {
-    let currentX = mower.x;
-    let currentY = mower.y;
-    let currentOrientation = mower.orientation;
-    console.log(instructions)
+function moveMower(maxCoord, instructions) {
+    //si mapeamos sabemos que instruction vaa a ser un array y va a retornar un array nuevo
+    return instructions.map((instruction) => {
 
-    for (let i = 0; i < instructions.length; i++) {
-        let instruction = instructions[i];
+        let currentX = instruction.x;
+        let currentY = instruction.y;
+        let currentOrientation = instruction.orientation;
 
-        if (instruction === 'L') {
-            // left
-            switch (currentOrientation) {
-                case 'N':
-                    currentOrientation = 'W';
-                    break;
-                case 'W':
-                    currentOrientation = 'S';
-                    break;
-                case 'S':
-                    currentOrientation = 'E';
-                    break;
-                case 'E':
-                    currentOrientation = 'N';
-                    break;
-            }
-        } else if (instruction === 'R') {
-            // right
-            switch (currentOrientation) {
-                case 'N':
-                    currentOrientation = 'E';
-                    break;
-                case 'E':
-                    currentOrientation = 'S';
-                    break;
-                case 'S':
-                    currentOrientation = 'W';
-                    break;
-                case 'W':
-                    currentOrientation = 'N';
-                    break;
-            }
-        } else if (instruction === 'M') {
-            // go straight
-            switch (currentOrientation) {
-                case 'N':
-                    currentY++;
-                    break;
-                case 'E':
-                    currentX++;
-                    break;
-                case 'S':
-                    currentY--;
-                    break;
-                case 'W':
-                    currentX--;
-                    break;
-            }
-
-            // inside
-            if (currentX < 0 || currentX > maxX || currentY < 0 || currentY > maxY) {
-                throw new Error('Mower out of area');
-            }
+        //lo metemos en objeto para que no creen conflicto
+        const decisionTree = {
+            L: {
+                N: () => { return "W" },
+                W: () => { return "S" },
+                S: () => { return "E" },
+                E: () => { return "N" }
+            },
+            R: {
+                N: () => { return "E" },
+                W: () => { return "N" },
+                S: () => { return "W" },
+                E: () => { return "S" }
+            },
+            M: {
+                N: () => { return { x: currentX, y: currentY + 1 } },
+                W: () => { return { x: currentX - 1, y: currentY } },
+                S: () => { return { x: currentX, y: currentY - 1 } },
+                E: () => { return { x: currentX + 1, y: currentY } }
+            },
         }
-    }
 
-    return `${currentX} ${currentY} ${currentOrientation}`;
+        Array.from(instruction.moves).forEach(move => {
+
+            const response = decisionTree[move][currentOrientation]()
+            if (response instanceof Object) {
+                let { x, y } = response
+
+                if (x < 0 || x > maxCoord.x || y < 0 || y > maxCoord.y) {
+                    throw new Error('Mower out of area');
+                }
+                currentX = x
+                currentY = y
+            } else {
+                currentOrientation = response
+            }
+
+        })
+
+        return `${currentX}${currentY}${currentOrientation}`
+    })
 }
-
 
 module.exports = { moveMower }
