@@ -90,41 +90,63 @@ From the data.js or data.ts file you can change data or instructions to take the
  	
 # Installation guide 🔍
 ---
+
 1. Clone the repository: git clone https://github.com/lidiettes/sc-challenge.git
   
 2. Install Node.js: Make sure Node.js is installed on your computer. You can download the latest version of Node.js from the official website: https://nodejs.org/en/download/
+
+3. The project is made in two versions, one with javaScript in the "main" branch, and one with TypeScript in the "typescript-version" branch.  To switch branches remember to use:
+ ```
+ git checkout <branch> 
+ ```
+
+## OPTION JAVASCRIPT IN "MAIN" BRANCH
   
-3. Install the dependencies: 
+1. Install the dependencies: 
   ```
   npm install
   ```
-4. Compile the project: After installing the dependencies, ONLY if you are in the TypesCript version remember that you have to do the following command:   
-```
-  npm run build
-```
   
-  This will compile the TypeScript code into JavaScript and generate the necessary files in the "dist" or "build" folder.
-  
-5. Start: 
+2. Start: 
   
   ```
   npm start
   ```
   
-6. If you want check the tests:
+3. If you want check the tests:
   
   ```
   npm test
   ```
-
- 7. It is not necessary to install TypeScript on your computer, as the project dependencies should include everything needed to compile TypeScript code into JavaScript.
  
- 8. The project is made in two versions, one with javaScript in the "main" branch, and one with TypeScript in the "typescript-version" branch.  To switch branches remember to use:
- ```
- git checkout <branch> 
- ```
+## OPTION TYPESCRIPT IN "TYPESCRIPT-VERSION" BRANCH
 
-
+ It is not necessary to install TypeScript on your computer, as the project dependencies should include everything needed to compile TypeScript code into JavaScript.
+ 
+ 1. Install the next dependencies: 
+ 
+  ```
+  npm install
+  ```
+ 
+ 2. Compile the project, ONLY if you are in the TypeScript version, you have to do the following command:   
+```
+  npm run build
+```
+ This will compile the TypeScript code into JavaScript and generate the necessary files in the "dist" or "build" folder.
+ 
+ 4. Start: 
+  
+  ```
+  npm start
+  ```
+  
+ 5. If you want check the tests:
+  
+  ```
+  npm test
+  ```
+  
 # Dependencies 🛠️
   
 **Nodemon** : A utility that automatically restarts the Node.js application when changes are detected.
