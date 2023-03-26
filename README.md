@@ -98,7 +98,7 @@ From the data.js or data.ts file you can change data or instructions to take the
   ```
   npm install
   ```
-4. Compile the project: After installing the dependencies, you will need to compile the TypeScript project into JavaScript using the following command:   
+4.Compile the project: After installing the dependencies, ONLY if you are in the TypesCript version remember that you have to do the following command:   
 ```
   npm run build
 ```
@@ -111,15 +111,15 @@ From the data.js or data.ts file you can change data or instructions to take the
   npm start
   ```
   
-4. If you want check the tests:
+6. If you want check the tests:
   
   ```
   npm test
   ```
 
-  5. It is not necessary to install TypeScript on your computer, as the project dependencies should include everything needed to compile TypeScript code into JavaScript.
+  7. It is not necessary to install TypeScript on your computer, as the project dependencies should include everything needed to compile TypeScript code into JavaScript.
  
- 6. The project is made in two versions, one with javaScript in the "main" branch, and one with typeScript in the "t" branch. and one with typeScript in the "typescript-version" branch.  To switch branches remember to use:
+ 8. The project is made in two versions, one with javaScript in the "main" branch, and one with TypeScript in the "typescript-version" branch.  To switch branches remember to use:
  ```
  git checkout <branch> 
  ```
