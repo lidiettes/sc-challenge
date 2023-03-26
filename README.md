@@ -1,5 +1,6 @@
 
  <h1 align="center"> Seat Challenge! </h1>
+ 
 
 
 <img src="https://user-images.githubusercontent.com/96661791/227678275-d1769ab2-8bec-4153-8e1b-352740ca5e80.png" alt="Imagen de cabecera" width="100%">
@@ -74,7 +75,7 @@ This file simulate two mowers in a 5x5 field, with the following configuration:
 Mower 1: starting position at (1, 2) facing north, with instructions LMLMLMLMLMLMM.
 Mower 2: starting position at (3, 3) facing east, with instructions MMRMMRMRRMRRM.
 
-Run the nodemon src/index.js command to start the simulation.
+Run the command to start the simulation.
 
 The console will display the simulation result for each slicer in the following format:
 Mower <mower number>: <end position>.
@@ -85,7 +86,7 @@ Mower 2: 5 1 E
 This result indicates that mower 1 ended up at position (1, 3) facing north, and mower 2 ended up at position (5, 1) facing east.
 
 From the data.js or data.ts file you can change data or instructions to take the mower through another route and see the final result in the console. :+1:
- 
+
  	
 # Installation guide 🔍
 ---
@@ -117,6 +118,11 @@ From the data.js or data.ts file you can change data or instructions to take the
   ```
 
   5. It is not necessary to install TypeScript on your computer, as the project dependencies should include everything needed to compile TypeScript code into JavaScript.
+ 
+ 6. The project is made in two versions, one with javaScript in the "main" branch, and one with typeScript in the "t" branch. and one with typeScript in the "typescript-version" branch.  To switch branches remember to use:
+ ```
+ git checkout <branch> 
+ ```
 
 
 # Dependencies 🛠️
