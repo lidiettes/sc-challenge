@@ -4,7 +4,7 @@ const { moveMower } = require('./utils/mower')
 const processArg = [...process.argv]
 // quito las rutas primeras
 const argument = processArg.slice(2, process.argv.length)
-console.log("programa iniciado...");
+console.log("App started..");
 
 //cogemos el 55 para saber los limites
 const rightUpFinalCoord = argument.slice(0, 1)
@@ -12,7 +12,7 @@ const maxCoord = {
     x: Number(rightUpFinalCoord[0].substring(0, 1)),
     y: Number(rightUpFinalCoord[0].substring(1, 2))
 }
-console.log(`Punto superior derecho: { x: ${maxCoord.x} y: ${maxCoord.y} }`);
+console.log(`Upper right point: { x: ${maxCoord.x} y: ${maxCoord.y} }`);
 
 //formateamos instrucciones
 const instructions = []
