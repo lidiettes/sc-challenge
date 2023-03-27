@@ -40,7 +40,7 @@ function moveMower(maxCoord, instructions) {
                 currentOrientation = response
             }
         })
-        return `The final coordinates of the mower are ${currentX}${currentY}${currentOrientation}`
+        return `The final coordinates of the mower is ${currentX}${currentY}${currentOrientation}`
     })
 }
 

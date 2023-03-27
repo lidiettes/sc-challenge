@@ -82,12 +82,12 @@ npm start
 The console will show you the following data for the example model: 
 
 ```
-App started..
+App started...
 Upper right point: { x: 5 y: 5 }
 Parsed instruction are: {"x":1,"y":2,"orientation":"N","moves":"LMLMLMLMM"}
 Parsed instruction are: {"x":3,"y":3,"orientation":"E","moves":"MMRMMRMRRM"}
-The final coordinates of the mower are 13N
-The final coordinates of the mower are 51E
+The final coordinates of the mower is 13N
+The final coordinates of the mower is 51E
 ```
 
 This result indicates that mower 1 ended up at position (1, 3) facing north, and mower 2 ended up at position (5, 1) facing east.
@@ -114,17 +114,17 @@ Type the following command, and it should strictly take the following form
 node index.js CC XYO MMMM
 ```
 
--They must be separated by a single space. Be careful that they are not line breaks. 
+- They must be separated by a single space. Be careful that they are not line breaks. 
 
--Must be upper case
+- Must be upper case
 
--"CC" must be replaced by numbers from 1-9
+- "CC" must be replaced by numbers from 1-9
 
--"XY" must be replaced by numbers from 1-9
+- "XY" must be replaced by numbers from 1-9
 
--"O" must be replaced by N, S, E, W
+- "O" must be replaced by N, S, E, W
 
--"M" must be replaced by L, R, M, you can repeat them and put as many as you want, but remember that you can go out of the area :)
+- "M" must be replaced by L, R, M, you can repeat them and put as many as you want, but remember that you can go out of the area :)
 
 
 If you have fulfilled the following restrictions the console should return you the new final coordinates or that you are out of the area in that case. 🎉 
