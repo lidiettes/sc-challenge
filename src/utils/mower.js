@@ -2,11 +2,9 @@
 function moveMower(maxCoord, instructions) {
     //si mapeamos sabemos que instruction vaa a ser un array y va a retornar un array nuevo
     return instructions.map((instruction) => {
-
         let currentX = instruction.x;
         let currentY = instruction.y;
         let currentOrientation = instruction.orientation;
-
         //lo metemos en objeto para que no creen conflicto
         const decisionTree = {
             L: {
@@ -30,11 +28,9 @@ function moveMower(maxCoord, instructions) {
         }
 
         Array.from(instruction.moves).forEach(move => {
-
             const response = decisionTree[move][currentOrientation]()
             if (response instanceof Object) {
                 let { x, y } = response
-
                 if (x < 0 || x > maxCoord.x || y < 0 || y > maxCoord.y) {
                     throw new Error('Mower out of area');
                 }
@@ -43,9 +39,7 @@ function moveMower(maxCoord, instructions) {
             } else {
                 currentOrientation = response
             }
-
         })
-
         return `${currentX}${currentY}${currentOrientation}`
     })
 }
