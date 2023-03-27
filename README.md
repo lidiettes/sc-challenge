@@ -79,7 +79,7 @@ Run the command to start the simulation.
 npm start
 ```
 
-the console will show you the following data for the example model: 
+The console will show you the following data for the example model: 
 
 ```
 App started..
