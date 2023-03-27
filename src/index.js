@@ -2,7 +2,7 @@ const { moveMower } = require('./utils/mower')
 
 const processArg = [...process.argv]
 const data = processArg.slice(2, process.argv.length)
-console.log("App started..");
+console.log("App is working...");
 
 
 const initialMaxCoord = data.slice(0, 1)

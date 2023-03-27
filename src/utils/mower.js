@@ -1,11 +1,11 @@
 
 function moveMower(maxCoord, instructions) {
-    //si mapeamos sabemos que instruction vaa a ser un array y va a retornar un array nuevo
+
     return instructions.map((instruction) => {
         let currentX = instruction.x;
         let currentY = instruction.y;
         let currentOrientation = instruction.orientation;
-        //lo metemos en objeto para que no creen conflicto
+
         const decisionTree = {
             L: {
                 N: () => { return "W" },
