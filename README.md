@@ -68,8 +68,6 @@ MMRMMRMRRM
 ---
 To use the project, follow these steps:
 
-Open a terminal in the root folder of the project.
-
 This file simulate two mowers in a 5x5 field, with the following configuration:
 
 Mower 1: starting position at (1, 2) facing north, with instructions LMLMLMLMLMLMM.
@@ -77,91 +75,97 @@ Mower 2: starting position at (3, 3) facing east, with instructions MMRMMRMRRMRR
 
 Run the command to start the simulation.
 
-The console will display the simulation result for each slicer in the following format:
-Mower <mower number>: <end position>.
+```
+npm start
+```
 
-Mower 1: 1 3 N
-Mower 2: 5 1 E
+the console will show you the following data for the example model: 
+
+```
+App started..
+Upper right point: { x: 5 y: 5 }
+Parsed instruction are: {"x":1,"y":2,"orientation":"N","moves":"LMLMLMLMM"}
+Parsed instruction are: {"x":3,"y":3,"orientation":"E","moves":"MMRMMRMRRM"}
+The final coordinates of the mower are 13N
+The final coordinates of the mower are 51E
+```
 
 This result indicates that mower 1 ended up at position (1, 3) facing north, and mower 2 ended up at position (5, 1) facing east.
 
-From the data.js or data.ts file you can change data or instructions to take the mower through another route and see the final result in the console. :+1:
+**Custom movements**
+
+In order to custom the coordinates and give your own instructions follow the steps below: 
+
+Make sure that you are in the project folder by typing in the terminal
+
+```
+cd sc-codechallenge
+```
+
+Change to the "src" folder
+
+```
+cd src
+```
+
+Type the following command, and it should strictly take the following form
+
+```
+node index.js CC XYO MMMM
+```
+
+-They must be separated by a single space. Be careful that they are not line breaks. 
+
+-Must be upper case
+
+-"CC" must be replaced by numbers from 1-9
+
+-"XY" must be replaced by numbers from 1-9
+
+-"O" must be replaced by N, S, E, W
+
+-"M" must be replaced by L, R, M, you can repeat them and put as many as you want, but remember that you can go out of the area :)
+
+
+If you have fulfilled the following restrictions the console should return you the new final coordinates or that you are out of the area in that case. 🎉 
 
  	
 # Installation guide 🔍
 ---
-
 1. Clone the repository: git clone https://github.com/lidiettes/sc-challenge.git
   
 2. Install Node.js: Make sure Node.js is installed on your computer. You can download the latest version of Node.js from the official website: https://nodejs.org/en/download/
-
-3. The project is made in two versions, one with javaScript in the "main" branch, and one with TypeScript in the "typescript-version" branch.  To switch branches remember to use:
- ```
- git checkout <branch> 
- ```
-
-## OPTION JAVASCRIPT IN "MAIN" BRANCH
   
-1. Install the dependencies: 
+3. Install the dependencies: 
   ```
   npm install
   ```
-  
-2. Start: 
+
+5. Start: 
   
   ```
   npm start
   ```
   
-3. If you want check the tests:
+6. If you want check the tests:
   
   ```
   npm test
   ```
- 
-## OPTION TYPESCRIPT IN "TYPESCRIPT-VERSION" BRANCH
 
- It is not necessary to install TypeScript on your computer, as the project dependencies should include everything needed to compile TypeScript code into JavaScript.
- 
- 1. Install the next dependencies: 
- 
-  ```
-  npm install
-  ```
- 
- 2. Compile the project, ONLY if you are in the TypeScript version, you have to do the following command:   
-```
-  npm run build
-```
- This will compile the TypeScript code into JavaScript and generate the necessary files in the "dist" or "build" folder.
- 
- 4. Start: 
-  
-  ```
-  npm start
-  ```
-  
- 5. If you want check the tests:
-  
-  ```
-  npm test
-  ```
-  
 # Dependencies 🛠️
   
 **Nodemon** : A utility that automatically restarts the Node.js application when changes are detected.
   
 **Jest**: It is used for unit testing of applications and libraries.
-  
-**Ts-node**: It is a tool that allows you to run TypeScript code directly in Node.js without having to compile the TypeScript code to JavaScript beforehand.
-  
-**Typescript**: It is a software development tool used to add static typing to JavaScript. 
-  
- 
+
 # Limitations 📌
 ---
 The project does not have a graphical interface to visualise the simulation.
+
 The movement instructions can only contain the characters L, R and M.
+
+Github goes down on the day of delivery preventing me from working normally online, I resolve this by making all the changes locally so that when I come back I can upload it remotely.
  
 # Future implementations 💪
 ---
@@ -170,6 +174,8 @@ The movement instructions can only contain the characters L, R and M.
 2. Implement different mowers: You could create different types of mowers with different capabilities or features. For example, some mowers might be better suited for cutting long grass, while others might be more efficient at navigating tight corners.
 
 3. Create a graphical user interface: You could create a graphical user interface that allows users to interact with the mowers in real-time. This could be useful for monitoring the mowers' progress and making adjustments as necessary.
+
+4. Use TypeScript to improve scalability, code equality and productivity
  
 # Conclusion 🍎
 ---
@@ -197,8 +203,14 @@ We welcome any contributions. To contribute, please follow these steps:
   
 + We will review your pull request and provide feedback. Once it is approved, your changes will be merged.
   
-- Thank you for your contributions! 🎉
+- Thank you for your contributions! 🎉 
 
-# Author ✨
+# Author ✨ 
 ---
-Lidia Frias :shipit:
+
+
+[![](https://avatars.githubusercontent.com/u/96661791?s=120&v=4)](https://github.com/lidiettes)
+
+[@lidiettes](https://github.com/lidiettes)
+
+
