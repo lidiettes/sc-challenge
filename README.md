@@ -74,9 +74,6 @@ Mower 1: starting position at (1, 2) facing north, with instructions LMLMLMLMLML
 Mower 2: starting position at (3, 3) facing east, with instructions MMRMMRMRRMRRM.
 
 Run the command to start the simulation.
-```
-npm start
-```
 
 ```
 npm start
